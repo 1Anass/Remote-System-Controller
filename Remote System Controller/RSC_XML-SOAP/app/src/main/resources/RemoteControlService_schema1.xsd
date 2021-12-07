@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://Provider.RSCcode/" xmlns:tns="http://Provider.RSCcode/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="IOException" type="tns:IOException"/>
+
+  <xs:element name="getProperties" type="tns:getProperties"/>
+
+  <xs:element name="getPropertiesResponse" type="tns:getPropertiesResponse"/>
+
+  <xs:element name="reboot" type="tns:reboot"/>
+
+  <xs:element name="rebootResponse" type="tns:rebootResponse"/>
+
+  <xs:element name="screenshot" type="tns:screenshot"/>
+
+  <xs:element name="screenshotResponse" type="tns:screenshotResponse"/>
+
+  <xs:complexType name="getProperties">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getPropertiesResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="reboot">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="rebootResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="IOException">
+    <xs:sequence>
+      <xs:element name="message" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="screenshot">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="screenshotResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:base64Binary" nillable="true" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+
